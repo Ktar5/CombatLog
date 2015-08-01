@@ -1,0 +1,11 @@
+name: CombatLog
+version: 1.0
+description: Anti-CombatLog plugin 
+author: Ktar5
+
+main: com.minecave.combatlog.CombatLog
+
+commands:
+  cl:
+    description: CombatLog plugin command
+    usage: /cl 

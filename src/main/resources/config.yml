@@ -1,0 +1,53 @@
+### CombatLogger Plugin Configuration ###
+
+## Time (in seconds) before a player's tag expires and they can log out ##
+## NOTICE: Tag time is reset when a player takes (or deals) PvP damage ##
+## You can set this value to -1 to DISABLE tagging completely ##
+TAG_EXPIRE_DELAY: 15
+
+## Time (in seconds) before a player's NPC despawns ##
+## NOTICE: Tag time is reset when an NPC takes Player damage ##
+NPC_DESPAWN_DELAY: 10
+
+## List of Worlds where this plugin's features are disabled ##
+## Set to 'DISABLED_WORLDS: []' to enable for all worlds ##
+DISABLED_WORLDS:
+- world
+
+## List of Commands that player's can't run while tagged ##
+BLOCKED_COMMANDS:
+- /spawn
+- /tp
+
+## Should tagged players be denied when they try to teleport? ##
+BLOCK_TELEPORT: true
+
+## Should NPCs drop the CombatLogger's exp when killed? ##
+DROP_EXPERIENCE: true
+
+messages:
+  ## Message sent when a player tries to use a blocked command while tagged ##
+  COMMAND_BLOCKED: '&cError! You cannot use this command while in combat!'
+
+  ## Message sent when a player tries to teleport while tagged ##
+  TELEPORT_BLOCKED: '&cError! You cannot teleport while in combat!'
+
+  ## Message sent to a player when they are tagged from PvP damage ##
+  ## You may format this message with the following: ##
+  ## %player% - the player who inflicted the PvP damage ## 
+  ## %time% - the configured value of TAG_EXPIRE_DELAY ##
+  DAMAGED_TAGGED: '&cYou have been hit by &e%player% &cand tagged for &e%time% seconds'
+
+  ## Message sent to a player when they are tagged from dealing PvP damage ##
+  ## You may format this message with the following: ##
+  ## %player% - the player who the PvP damage was inflicted to ## 
+  ## %time% - the configured value of TAG_EXPIRE_DELAY ##
+  DAMAGER_TAGGED: '&cYou have been tagged in combat for &e%time% seconds &cfor hitting &e%player%'
+  
+  ## Message sent when a player runs the /cl command but is not tagged ##
+  NOT_TAGGED: '&cYou are not currently in combat!'
+  
+  ## Message sent when a player runs the /cl command and is in combat ##
+  ## You may format this message with the following: ##
+  ## %time% - the remaining amount of time this Player will be tagged ##
+  TAGGED_TIME: '&6You are currently in combat for &c%time% &6seconds'
